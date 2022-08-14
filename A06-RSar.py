@@ -170,21 +170,31 @@ while True:
         continue  # to show the menu
 
     elif choice_str == '2':  # Remove an existing Task
-        task = IO.input_task_to_remove()
-        table_lst = Processor.remove_data_from_list(task=task,
-                                                    list_of_rows=
-                                                    table_lst)
+        print("""
+\tUser selected: \tOption 2 - 'Remove an existing task' 
+\tCall 1: \t\tinput_task_to_remove
+\tCall 2: \t\tremove_data_from_list""")  # temp_debugging
+        # task = IO.input_task_to_remove()
+        # table_lst = Processor.remove_data_from_list(task=task,
+        #                                             list_of_rows=
+        #                                             table_lst)
         continue  # to show the menu
 
     elif choice_str == '3':  # Save Data to File
-        table_lst = Processor .write_data_to_file(file_name=
-                                                  file_name_str,
-                                                  list_of_rows=
-                                                  table_lst)
-        print("Data Saved!")
+        print("""
+\tUser selected: \tOption 3 - 'Save Data to File' 
+\tCall 1: \t\tinput_task_to_remove
+\tCall 2: \t\twrite_data_to_file""")  # temp_debugging
+        # table_lst = Processor .write_data_to_file(file_name=
+        #                                           file_name_str,
+        #                                           list_of_rows=
+        #                                           table_lst)
+        print("\n\tData Saved!")
         continue  # to show the menu
 
     elif choice_str == '4':  # Exit Program
-        print("Goodbye!")
-        input("Press ENTER key to quit.")
+        print("\n\tUser selected: Option 4 - 'Exit program'")
+        # temp_debugging
+        print("\n\tGoodbye!")
+        input("\n[Press ENTER key to quit.]")
         break  # by exiting loop

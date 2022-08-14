@@ -56,9 +56,13 @@ class Processor:
         :param list_of_rows: (list) you want filled with file data:
         :return: (list) of dictionary rows
         """
-        row = {"Task": str(task).strip(),
-               "Priority": str(priority).strip()}
+        row_dic = {"Task": str(task).strip(),
+                   "Priority": str(priority).strip()}
         # TODO: Add Code Here!
+        list_of_rows.append(row_dic)
+        print("\n\tAdded task: '" + task + " (" + priority + ")'")
+        print("\n\tProcessor.add_data_to_list(list_of_rows) = " +
+              str(list_of_rows))  # temp_debugging
         return list_of_rows
 
     @staticmethod
@@ -70,6 +74,14 @@ class Processor:
         :return: (list) of dictionary rows
         """
         # TODO: Add Code Here!
+        for row_dic in list_of_rows:  # Remove task
+            if row_dic["Task"].lower() == task.lower():
+                print("\n\tRemoved task: '" + row_dic["Task"] +
+                      "(" + row_dic["Priority"] + ")'")
+                list_of_rows.remove(row_dic)
+        print("\n\tlist_of_rows = " + str(list_of_rows))
+        # temp_debugging
+        print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
         return list_of_rows
 
     @staticmethod
@@ -135,9 +147,15 @@ class IO:
     def input_new_task_and_priority():
         """  Gets task and priority values to be added to the list
 
-        :return: (string, string) with task and priority
+        :return: (task, priority) with task and priority
         """
-        pass  # TODO: Add Code Here!
+        task = str(input("\nWhat is the task? - "))
+        priority = str(input("What is the priority? - "))
+        print("\n\tIO.input_new_task_and_priority(task) = " + task)  # \
+        # temp_debugging
+        print("\tIO.input_new_task_and_priority(priority) = " +
+              priority)  # temp_debugging
+        return task, priority  # TODO: Add Code Here!
 
     @staticmethod
     def input_task_to_remove():
@@ -145,7 +163,10 @@ class IO:
 
         :return: (string) with task
         """
-        pass  # TODO: Add Code Here!
+        task = str(input("\nTask to remove?: ")).strip()
+        print("\n\tIO.input_task_to_remove(task) = " + task)
+        # temp_debugging
+        return task
 
 
 # Main Body of Script  ------------------------------------------- #
@@ -166,38 +187,44 @@ while True:
 
     # Step 4 - Process user's menu choice
     if choice_str.strip() == '1':  # Add a new Task
-        print("""
-\tUser selected: \tOption 1 - 'Add a new task' 
-\tCall 1: \t\tinput_new_task_and_priority
-\tCall 2: \t\tadd_data_to_list""")  # temp_debugging
-        # task, priority = IO.input_new_task_and_priority()
-        # table_lst = Processor.add_data_to_list(task=task,
-        #                                        priority=priority,
-        #                                        list_of_rows=table_lst)
+        print("\n\tUser selected: \tOption 1 - 'Add a new task'")
+        print("\n\tCall 1: \t\tIO.input_new_task_and_priority()")
+        # temp_debugging
+        task, priority = IO.input_new_task_and_priority()
+
+        print("\n\tCall 2: \t\tProcessor.add_data_to_list()")
+        # temp_debugging
+        table_lst = Processor.add_data_to_list(task=task,
+                                               priority=priority,
+                                               list_of_rows=table_lst)
+
+        print("\n\ttable_lst = " +
+              str(table_lst))  # temp_debugging
         continue  # to show the menu
 
     elif choice_str == '2':  # Remove an existing Task
-        print("""
-\tUser selected: \tOption 2 - 'Remove an existing task' 
-\tCall 1: \t\tinput_task_to_remove
-\tCall 2: \t\tremove_data_from_list""")  # temp_debugging
-        # task = IO.input_task_to_remove()
-        # table_lst = Processor.remove_data_from_list(task=task,
-        #                                             list_of_rows=
-        #                                             table_lst)
-        continue  # to show the menu
+        print("\n\tUser selected: \tOption 2 - 'Remove an existing task'")
+        # temp_debugging
+        print("\n\tlist_of_rows = " + str(list_of_rows))
+        # temp_debugging
+        print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
+        print("\n\tCall 1: \t\tProcessor.input_task_to_remove")
+        # temp_debugging
+        task = IO.input_task_to_remove()
+
+        print("\n\tCall 2: \t\tProcessor.remove_data_from_list()")
+        # temp_debugging
+        table_lst = Processor.remove_data_from_list(task=task,
+                                                    list_of_rows=
+                                                    table_lst)
 
     elif choice_str == '3':  # Save Data to File
-        print("""
-\tUser selected: \tOption 3 - 'Save Data to File' 
-\tCall 1: \t\tinput_task_to_remove
-\tCall 2: \t\twrite_data_to_file""")  # temp_debugging
-        table_lst = Processor .write_data_to_file(file_name=
-                                                  file_name_str,
-                                                  list_of_rows=
-                                                  table_lst)
-        print("\n\tData Saved!")
-        continue  # to show the menu
+        print("\n\tUser selected: \tOption 3 - 'Save Data to File'"
+              "\n\tCall 1: \t\tProcessor.write_data_to_file()")  # temp_debugging
+
+        table_lst = Processor.write_data_to_file(file_name=
+                                                 file_name_str,
+                                                 list_of_rows=table_lst)
 
     elif choice_str == '4':  # Exit Program
         print("\n\tUser selected: Option 4 - 'Exit program'")

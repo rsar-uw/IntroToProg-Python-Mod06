@@ -33,6 +33,7 @@ class Processor:
                    "Priority": str(priority).strip()}
         # TODO: Add Code Here!
         list_of_rows.append(row_dic)
+        print("\n\tAdded task: '" + task + " (" + priority + ")'")
         print("\n\tProcessor.add_data_to_list(list_of_rows) = " +
               str(list_of_rows))  # temp_debugging
         return list_of_rows

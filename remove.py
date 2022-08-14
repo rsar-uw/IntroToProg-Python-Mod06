@@ -34,8 +34,8 @@ class Processor:
         # TODO: Add Code Here!
         for row_dic in list_of_rows:  # Remove task
             if row_dic["Task"].lower() == task.lower():
-                print("\n\t'" + row_dic["Task"] +
-                      " (" + row_dic["Priority"] + ")' has been removed.")
+                print("\n\tRemoved task: '" + row_dic["Task"] +
+                      "(" + row_dic["Priority"] + ")'")
                 list_of_rows.remove(row_dic)
         print("\n\tlist_of_rows = " + str(list_of_rows))
         # temp_debugging
@@ -53,7 +53,9 @@ class IO:
 
         :return: (string) with task
         """
-        task = str(input("\nWhich task to remove?: ")).strip()
+        task = str(input("\nTask to remove?: ")).strip()
+        print("\n\tIO.input_task_to_remove(task) = " + task)
+        # temp_debugging
         return task
 
 # Main Body of Script  ------------------------------------------- #
@@ -72,9 +74,10 @@ print("\n\tUser selected: \tOption 2 - 'Remove an existing task'")
 # temp_debugging
 
 while True:  # temp_debugging
-    print("\n\tlist_of_rows = " + str(list_of_rows))  # temp_debugging
+    print("\n\tlist_of_rows = " + str(list_of_rows))
+    # temp_debugging
     print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
-    print("\n\tCall 1: \t\tIO.input_task_to_remove()")
+    print("\n\tCall 1: \t\tProcessor.input_task_to_remove")
     # temp_debugging
     task = IO.input_task_to_remove()
 
@@ -83,4 +86,4 @@ while True:  # temp_debugging
     table_lst = Processor.remove_data_from_list(task=task,
                                                 list_of_rows=
                                                 table_lst)
-    print("\n\t\\end Option 2 loop.")
+    print("\n\t\\end Option 2 loop.")  # temp_debugging

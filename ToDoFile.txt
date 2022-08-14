@@ -1,4 +1,4 @@
-write_test_task1,p1
-write_test_task2,p2
-write_test_task3,p3
-write_test_task4,p4
+read_test_task1,p1
+read_test_task2,p2
+read_test_task3,p3
+read_test_task4,p4

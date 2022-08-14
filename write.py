@@ -40,7 +40,7 @@ class Processor:
                            str(row_dic["Priority"]) + "\n")
         file_obj.close()
         print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
-        print("\n\tData saved to: " + file_name)
+        print("\n\tSaved to file: " + file_name)
         return list_of_rows
 
 # Presentation (Input/Output)  ----------------------------------- #

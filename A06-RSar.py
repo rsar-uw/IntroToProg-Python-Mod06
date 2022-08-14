@@ -14,6 +14,7 @@
 
 # Data ----------------------------------------------------------- #
 # Declare variables and constants
+strProgramTitle = "To Do List XP v2.0"  # Program name
 file_name_str = "ToDoFile.txt"  # The name of the data file
 file_obj = None  # An object that represents a file
 row_dic = {}  # A row of data separated into elements of a dictionary
@@ -99,7 +100,7 @@ class Processor:
                            str(row_dic["Priority"]) + "\n")
         file_obj.close()
         print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
-        print("\n\tData saved to: " + file_name)
+        print("\n\tSaved to file: " + file_name)
         return list_of_rows
 
 
@@ -170,6 +171,8 @@ class IO:
 
 
 # Main Body of Script  ------------------------------------------- #
+print("\nWelcome to " + strProgramTitle + "!"  # Display program name
+      "\n\n\tOpened file: '" + file_name_str + "'")
 
 # Step 1 - When the program starts, Load data from ToDoFile.txt.
 Processor.read_data_from_file(file_name=file_name_str,
@@ -220,7 +223,7 @@ while True:
 
     elif choice_str == '3':  # Save Data to File
         print("\n\tUser selected: \tOption 3 - 'Save Data to File'"
-              "\n\tCall 1: \t\tProcessor.write_data_to_file()")  # temp_debugging
+              "\n\n\tCall 1: \t\tProcessor.write_data_to_file()")  # temp_debugging
 
         table_lst = Processor.write_data_to_file(file_name=
                                                  file_name_str,

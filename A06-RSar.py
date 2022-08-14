@@ -94,14 +94,13 @@ class IO:
 
         :return: nothing
         """
-        print('''
-        Menu of Options
-        1) Add a new Task
-        2) Remove an existing Task
-        3) Save Data to File        
-        4) Exit Program
-        ''')
-        print()  # Add an extra line for looks
+        print("""
+    \tMenu of Options
+    \t1) Add a new Task
+    \t2) Remove an existing Task
+    \t3) Save Data to File        
+    \t4) Exit Program
+    """)
 
     @staticmethod
     def input_menu_choice():

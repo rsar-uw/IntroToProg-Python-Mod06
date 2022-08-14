@@ -9,6 +9,7 @@
 
 # Data ----------------------------------------------------------- #
 # Declare variables and constants
+choice_str = ""  # Captures the user option selection
 
 
 # Processing  ---------------------------------------------------- #

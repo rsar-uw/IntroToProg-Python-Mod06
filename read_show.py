@@ -10,6 +10,9 @@
 # Data ----------------------------------------------------------- #
 # Declare variables and constants
 file_name_str = "ToDoFile.txt"  # The name of the data file
+row_dic = {}  # A row of data separated into elements of a dictionary
+# {Task,Priority}
+list_of_rows = []  # List of dictionary rows
 table_lst = []  # A list that acts as a 'table' of rows
 choice_str = ""  # Captures the user option selection
 
@@ -26,8 +29,8 @@ class Processor:
 
         for line in file:
             task, priority = line.split(",")
-            row = {"Task": task.strip(), "Priority": priority.strip()}
-            list_of_rows.append(row)
+            row_dic = {"Task": task.strip(), "Priority": priority.strip()}
+            list_of_rows.append(row_dic)
 
         file.close()
         print("\nfile_name = " + file_name + "\n")  # temp_debugging

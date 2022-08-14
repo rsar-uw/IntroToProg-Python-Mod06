@@ -23,7 +23,12 @@ class Processor:
 
     @staticmethod
     def read_data_from_file(file_name, list_of_rows):
+        """ Reads data from a file into a list of dictionary rows
 
+        :param file_name: (string) with name of file:
+        :param list_of_rows: (list) you want filled with file data:
+        :return: (list) of dictionary rows
+        """
         list_of_rows.clear()  # clear current data
         file = open(file_name, "r")
 
@@ -52,7 +57,6 @@ class IO:
         for row in list_of_rows:
             print(row["Task"] + " (" + row["Priority"] + ")")
         print("*******************************************")
-        print()  # Add an extra line for looks
 
 
 # Main Body of Script  ------------------------------------------- #

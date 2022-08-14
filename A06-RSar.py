@@ -8,6 +8,7 @@
 # ChangeLog: (date,name,change)
 #            2022/01/01, RRoot, Created starter script
 #            2022/08/13, RSar, Modified code to complete Assignment06
+#            2022/08/14, RSar, Assembled code from modules
 # ------------------------------- #
 
 
@@ -35,14 +36,15 @@ class Processor:
         :return: (list) of dictionary rows
         """
         list_of_rows.clear()  # clear current data
-        file = open(file_name_str, "r")
+        file = open(file_name, "r")
 
         for line in file:
             task, priority = line.split(",")
-            row = {"Task": task.strip(), "Priority": priority.strip()}
-            list_of_rows.append(row)
+            row_dic = {"Task": task.strip(), "Priority": priority.strip()}
+            list_of_rows.append(row_dic)
 
         file.close()
+        print("\nfile_name = " + file_name + "\n")  # temp_debugging
         return list_of_rows
 
     @staticmethod
@@ -123,7 +125,6 @@ class IO:
         for row in list_of_rows:
             print(row["Task"] + " (" + row["Priority"] + ")")
         print("*******************************************")
-        print()  # Add an extra line for looks
 
     @staticmethod
     def input_new_task_and_priority():

@@ -32,11 +32,11 @@ class Processor:
         :return: (list) of dictionary rows
         """
         # TODO: Add Code Here!
-        for row in list_of_rows:  # Remove task
-            if row["Task"].lower() == task.lower():
-                print("\n\t'" + row["Task"] +
-                      " (" + row["Priority"] + ")' has been removed.")
-                list_of_rows.remove(row)
+        for row_dic in list_of_rows:  # Remove task
+            if row_dic["Task"].lower() == task.lower():
+                print("\n\t'" + row_dic["Task"] +
+                      " (" + row_dic["Priority"] + ")' has been removed.")
+                list_of_rows.remove(row_dic)
         print("\n\tlist_of_rows = " + str(list_of_rows))
         # temp_debugging
         print("\n\ttable_lst = " + str(table_lst))  # temp_debugging

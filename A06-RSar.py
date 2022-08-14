@@ -44,7 +44,7 @@ class Processor:
             list_of_rows.append(row_dic)
 
         file.close()
-        print("\nfile_name = " + file_name + "\n")  # temp_debugging
+        print("\n\tfile_name = " + file_name)  # temp_debugging
         return list_of_rows
 
     @staticmethod
@@ -110,7 +110,6 @@ class IO:
         """
         choice = str(input("Which option would you like to "
                            "perform? [1 to 4] - ")).strip()
-        print()  # Add an extra line for looks
         return choice
 
     @staticmethod
@@ -120,10 +119,10 @@ class IO:
         :param list_of_rows: (list) of rows you want to display
         :return: nothing
         """
-        print("******* The current tasks To Do are: *******")
+        print("\n\t******* The current tasks To Do are: *******")
         for row in list_of_rows:
-            print(row["Task"] + " (" + row["Priority"] + ")")
-        print("*******************************************")
+            print("\t" + row["Task"] + " (" + row["Priority"] + ")")
+        print("\t*******************************************")
 
     @staticmethod
     def input_new_task_and_priority():
@@ -160,10 +159,14 @@ while True:
 
     # Step 4 - Process user's menu choice
     if choice_str.strip() == '1':  # Add a new Task
-        task, priority = IO.input_new_task_and_priority()
-        table_lst = Processor.add_data_to_list(task=task,
-                                               priority=priority,
-                                               list_of_rows=table_lst)
+        print("""
+\tUser selected: \tOption 1 - 'Add a new task' 
+\tCall 1: \t\tinput_new_task_and_priority
+\tCall 2: \t\tadd_data_to_list""")  # temp_debugging
+        # task, priority = IO.input_new_task_and_priority()
+        # table_lst = Processor.add_data_to_list(task=task,
+        #                                        priority=priority,
+        #                                        list_of_rows=table_lst)
         continue  # to show the menu
 
     elif choice_str == '2':  # Remove an existing Task

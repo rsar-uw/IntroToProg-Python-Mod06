@@ -38,7 +38,7 @@ class Processor:
             list_of_rows.append(row_dic)
 
         file.close()
-        print("\nfile_name = " + file_name + "\n")  # temp_debugging
+        print("\n\tfile_name = " + file_name)  # temp_debugging
         return list_of_rows
 
 
@@ -53,10 +53,10 @@ class IO:
         :param list_of_rows: (list) of rows you want to display
         :return: nothing
         """
-        print("******* The current tasks To Do are: *******")
+        print("\n\t******* The current tasks To Do are: *******")
         for row in list_of_rows:
-            print(row["Task"] + " (" + row["Priority"] + ")")
-        print("*******************************************")
+            print("\t" + row["Task"] + " (" + row["Priority"] + ")")
+        print("\t*******************************************")
 
 
 # Main Body of Script  ------------------------------------------- #
@@ -71,5 +71,7 @@ Processor.read_data_from_file(file_name=file_name_str,
 # Step 3 Show current data
 IO.output_current_tasks_in_list(list_of_rows=table_lst)  # Show \
 # current data in the list/table
+IO.output_menu_tasks()  # Shows menu
+choice_str = IO.input_menu_choice()  # Get menu option
 
 # Step 4 - Process user's menu choice

@@ -53,9 +53,9 @@ while True:
 
     # Step 3 Show current data
     print("""
-\tstart Menu loop
+\tstart Menu loop 
 \t# Show current data in the list/table")
-\tCall 1: \t\tIO.output_current_tasks_in_list()""")
+\tCall 1: \t\tIO.output_current_tasks_in_list()""")  # temp_debugging
 
     IO.output_menu_tasks()  # Shows menu
     choice_str = IO.input_menu_choice()  # Get menu option
@@ -65,26 +65,27 @@ while True:
         print("""
 \tUser selected: \tOption 1 - 'Add a new task' 
 \tCall 1: \t\tinput_new_task_and_priority
-\tCall 2: \t\tadd_data_to_list""")
+\tCall 2: \t\tadd_data_to_list""")  # temp_debugging
         continue  # to show the menu
 
     elif choice_str == '2':  # Remove an existing Task
         print("""
 \tUser selected: \tOption 2 - 'Remove an existing task' 
 \tCall 1: \t\tinput_task_to_remove
-\tCall 2: \t\tremove_data_from_list""")
+\tCall 2: \t\tremove_data_from_list""")  # temp_debugging
         continue  # to show the menu
 
     elif choice_str == '3':  # Save Data to File
         print("""
 \tUser selected: \tOption 3 - 'Save Data to File' 
 \tCall 1: \t\tinput_task_to_remove
-\tCall 2: \t\twrite_data_to_file""")
+\tCall 2: \t\twrite_data_to_file""")  # temp_debugging
         print("\n\tData Saved!")
         continue  # to show the menu
 
     elif choice_str == '4':  # Exit Program
         print("\n\tUser selected: Option 4 - 'Exit program'")
+        # temp_debugging
         print("\n\tGoodbye!")
         input("\n[Press ENTER key to quit.]")
         break  # by exiting loop

@@ -95,11 +95,11 @@ class IO:
         :return: nothing
         """
         print("""
-    \tMenu of Options
-    \t1) Add a new Task
-    \t2) Remove an existing Task
-    \t3) Save Data to File        
-    \t4) Exit Program
+\tMenu of Options
+\t1) Add a new Task
+\t2) Remove an existing Task
+\t3) Save Data to File        
+\t4) Exit Program
     """)
 
     @staticmethod

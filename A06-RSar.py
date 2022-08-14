@@ -81,6 +81,13 @@ class Processor:
         :return: (list) of dictionary rows
         """
         # TODO: Add Code Here!
+        file_obj = open(file_name, "w")
+        for row_dic in table_lst:
+            file_obj.write(str(row_dic["Task"]) + "," +
+                           str(row_dic["Priority"]) + "\n")
+        file_obj.close()
+        print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
+        print("\n\tData saved to: " + file_name)
         return list_of_rows
 
 
@@ -185,10 +192,10 @@ while True:
 \tUser selected: \tOption 3 - 'Save Data to File' 
 \tCall 1: \t\tinput_task_to_remove
 \tCall 2: \t\twrite_data_to_file""")  # temp_debugging
-        # table_lst = Processor .write_data_to_file(file_name=
-        #                                           file_name_str,
-        #                                           list_of_rows=
-        #                                           table_lst)
+        table_lst = Processor .write_data_to_file(file_name=
+                                                  file_name_str,
+                                                  list_of_rows=
+                                                  table_lst)
         print("\n\tData Saved!")
         continue  # to show the menu
 

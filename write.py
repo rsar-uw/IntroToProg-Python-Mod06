@@ -4,6 +4,7 @@
 # Desc: Module03 - Write data to file
 # ChangeLog: (date,name,change)
 #            2022/08/13, RSar, Created module to complete Assignment
+#            2022/08/14, RSar, Prepared module for submission
 # ------------------------------- #
 
 

@@ -4,6 +4,7 @@
 # Desc: Module0a - Read file, Display data
 # ChangeLog: (date,name,change)
 #            2022/08/13, RSar, Created module to complete Assignment06
+#            2022/08/14, RSar, Prepared module for submission
 # ------------------------------- #
 
 

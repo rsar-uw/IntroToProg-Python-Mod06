@@ -123,10 +123,10 @@ class Processor:
                            str(row_dic["Priority"]) + "\n")
         file_obj.close()
 
-        # # debug
-        # print("\n\t\\\\Processor.write_data_to_file(list_of_rows)" +
-        #       str(list_of_rows))
-        # # /debug
+        # debug
+        print("\n\t\\\\Processor.write_data_to_file(list_of_rows)" +
+              str(list_of_rows))
+        # /debug
 
         print("\n\tSaved data to file: " + file_name)
         return list_of_rows
@@ -297,7 +297,7 @@ while True:
     elif choice_str == '3':  # Save Data to File
 
         # # debug
-        # print("\t\\\\Global (choice_str) = " + choice_str +
+        # print("\n\t\\\\Global (choice_str) = " + choice_str +
         #       "\n\n\t\\\\Global (list_of_rows) = " + str(list_of_rows) +
         #       "\n\n\t\\\\Global (table_lst) = " + str(table_lst) +
         #       "\n\n\t\\\\Call: \tProcessor.write_data_to_file()")
@@ -320,4 +320,4 @@ while True:
 
         print("\n\tByeeee!")
         input("\n[Press ENTER key to quit.]")
-        break  # by exiting loop
+        break  # exit Menu loop

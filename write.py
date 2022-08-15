@@ -36,11 +36,11 @@ class Processor:
         """
         # TODO: Add Code Here!
         file_obj = open(file_name, "w")
-        for row_dic in table_lst:
+        for row_dic in list_of_rows:
             file_obj.write(str(row_dic["Task"]) + "," +
                            str(row_dic["Priority"]) + "\n")
         file_obj.close()
-        print("\n\ttable_lst = " + str(table_lst))  # temp_debugging
+        print("\n\tlist_of_rows = " + str(list_of_rows))  # temp_debugging
         print("\n\tSaved to file: " + file_name)
         return list_of_rows
 

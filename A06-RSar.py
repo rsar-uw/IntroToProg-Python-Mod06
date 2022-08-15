@@ -318,6 +318,6 @@ while True:
         # print("\t\\\\Global (choice_str) = " + choice_str)
         # # /debug
 
-        print("\n\tGoodbye!")
+        print("\n\tByeeee!")
         input("\n[Press ENTER key to quit.]")
         break  # by exiting loop

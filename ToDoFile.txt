@@ -1,5 +1,4 @@
 read_test_task1,p1
 read_test_task2,p2
 read_test_task3,p3
-read_test_task4,p4
-task6,p6
+add_test_task5,p5

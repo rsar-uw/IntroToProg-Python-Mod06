@@ -54,8 +54,8 @@ while True:
     # Step 3 Show current data
     print("""
 \tstart Menu loop 
-\t# Show current data in the list/table")
-\tCall 1: \t\tIO.output_current_tasks_in_list()""")  # temp_debugging
+\tCall 1: \t\tIO.output_current_tasks_in_list()
+\t# Show current data in the list/table")""")  # temp_debugging
 
     IO.output_menu_tasks()  # Shows menu
     choice_str = IO.input_menu_choice()  # Get menu option

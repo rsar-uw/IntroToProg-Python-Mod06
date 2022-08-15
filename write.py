@@ -14,12 +14,12 @@ file_name_str = "ToDoFile.txt"  # The name of the data file
 file_obj = None  # An object that represents a file
 row_dic = {}  # A row of data separated into elements of a dictionary \
 # {Task,Priority}
+list_of_rows = []
 table_lst = [{'Task': 'write_test_task1', 'Priority': 'p1'},
              {'Task': 'write_test_task2', 'Priority': 'p2'},
              {'Task': 'write_test_task3', 'Priority': 'p3'},
              {'Task': 'write_test_task4', 'Priority': 'p4'}]  # A \
-# list that acts as a 'table' of rows - pre-populated values for \
-# temp_debugging
+# list that acts as a 'table' of rows - pre-populated values
 
 
 # Processing  ---------------------------------------------------- #

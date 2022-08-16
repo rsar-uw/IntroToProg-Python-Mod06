@@ -9,6 +9,8 @@
 #            2022/01/01, RRoot, Created starter script
 #            2022/08/13, RSar, Modified code to complete Assignment06
 #            2022/08/14, RSar, Assembled code from modules
+#            2022/08/16, RSar, Removed 'shadow global variable' error, Comment out debug
+#            code.
 # ------------------------------- #
 
 
@@ -16,12 +18,12 @@
 # Declare variables and constants
 strProgramTitle = "To Do List XP v2.0"  # Program name
 file_name_str = "ToDoFile.txt"  # The name of the data file
-file_obj = None  # An object that represents a file
-row_dic = {}  # A row of data separated into elements of a dictionary
+# file_obj = None  # An object that represents a file
+# row_dic = {}  # A row of data separated into elements of a dictionary
 # {Task,Priority}
 table_lst = []  # A list that acts as a 'table' of rows
 choice_str = ""  # Captures the user option selection
-list_of_rows = []  # List of dictionary rows
+# list_of_rows = []  # List of dictionary rows
 
 
 # Processing  ---------------------------------------------------- #
@@ -40,8 +42,8 @@ class Processor:
         file = open(file_name, "r")
 
         for line in file:
-            task, priority = line.split(",")
-            row_dic = {"Task": task.strip(), "Priority": priority.strip()}
+            t, p = line.split(",")
+            row_dic = {"Task": t.strip(), "Priority": p.strip()}
             list_of_rows.append(row_dic)
 
         file.close()
@@ -123,10 +125,10 @@ class Processor:
                            str(row_dic["Priority"]) + "\n")
         file_obj.close()
 
-        # debug
-        print("\n\t\\\\Processor.write_data_to_file(list_of_rows)" +
-              str(list_of_rows))
-        # /debug
+        # # debug
+        # print("\n\t\\\\Processor.write_data_to_file(list_of_rows)" +
+        #       str(list_of_rows))
+        # # /debug
 
         print("\n\tSaved data to file: " + file_name)
         return list_of_rows
@@ -247,23 +249,21 @@ while True:
 
         # # debug
         # print("\t\\\\Global (choice_str) = " + choice_str +
-        #       "\n\n\t\\\\Global (list_of_rows) = " + str(list_of_rows) +
         #       "\n\n\t\\\\Global (table_lst) = " + str(table_lst) +
         #       "\n\t\\\\Call: \tIO.input_new_task_and_priority()")
         # # /debug
 
-        task, priority = IO.input_new_task_and_priority()
+        _task, _priority = IO.input_new_task_and_priority()
 
         # # debug
         # print("\t\\\\Call: \tProcessor.add_data_to_list()")
         # # /debug
 
-        table_lst = Processor.add_data_to_list(task=task,
-                                               priority=priority,
+        table_lst = Processor.add_data_to_list(task=_task,
+                                               priority=_priority,
                                                list_of_rows=table_lst)
 
         # # debug
-        # print("\n\t\\\\Global (list_of_rows) = " + str(list_of_rows) +
         #       "\n\n\t\\\\Global (table_lst) = " + str(table_lst))
         # # /debug
 
@@ -273,22 +273,20 @@ while True:
 
         # # debug
         # print("\t\\\\Global (choice_str) = " + choice_str +
-        #       "\n\n\t\\\\Global (list_of_rows) = " + str(list_of_rows) +
         #       "\n\n\t\\\\Global (table_lst) = " + str(table_lst) +
         #       "\n\n\t\\\\Call: \tIO.input_task_to_remove()")
         # # /debug
 
-        task = IO.input_task_to_remove()
+        _task = IO.input_task_to_remove()
 
         # # debug
         # print("\t\\\\Call: \tProcessor.remove_data_from_list()")
         # # /debug
 
-        table_lst = Processor.remove_data_from_list(task=task,
+        table_lst = Processor.remove_data_from_list(task=_task,
                                                     list_of_rows=table_lst)
 
         # # debug
-        # print("\n\t\\\\Global (list_of_rows) = " + str(list_of_rows) +
         #       "\n\n\t\\\\Global (table_lst) = " + str(table_lst))
         # # /debug
 
@@ -298,7 +296,6 @@ while True:
 
         # # debug
         # print("\n\t\\\\Global (choice_str) = " + choice_str +
-        #       "\n\n\t\\\\Global (list_of_rows) = " + str(list_of_rows) +
         #       "\n\n\t\\\\Global (table_lst) = " + str(table_lst) +
         #       "\n\n\t\\\\Call: \tProcessor.write_data_to_file()")
         # # /debug
@@ -307,7 +304,7 @@ while True:
                                                  list_of_rows=table_lst)
 
         # # debug
-        # print("\n\t\\\\Global (list_of_rows) = " + str(list_of_rows))
+        # print("\n\t\\\\Global (table_lst) = " + str(table_lst))
         # # /debug
 
         continue  # to show the menu
